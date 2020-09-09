@@ -74,102 +74,49 @@ height: 200px; /* only if you want fixed height */
 </style>
 
 </head>
+<?php
+  switch ($_GET["n"])
+  {
+    case "home":
+      $heading = "Home";
+    break;
+    case "register":
+      $heading = "Register";
+    break;
+    case "now":
+      $heading = "Now";
+    break;
+    case "reserve":
+      $heading = "Reserve";
+    break;
+
+    default: 
+      $heading = "Welcome";
+      $body = "Bet god x";
+    break;
+  }
+  ?>
+
 <body>
 
-    <!-- <div class="container-md">
-        <div class="row">
-        <div class="col">1</div>
-        <div class="col">2</div>
-        <div class="col">3</div>
-      
-   </div>
-   <div class="row">
-       <div class="col-sm">1</div>
-       <div class="col-sm">2</div>
-       
-    </div>
-    <div class="container">
-        <div class="row">
-            <div class="col-md-8"> Main Content </div>
-            <div class="col-md-4" >Sidebar</div>
-        </div>
-    </div>
-    </div>
-    <h2> Gutter </h2>
-    
    
-     <div class="container px-4">
-         <div class="row gx-5">
-
-            <div class="col">
-             <div class="p-3 border" > Customer column padding</div>
-            </div>
-
-            <div class="col">
-                <div class="p-3 border  "> Custom column padding </div>
-            </div>
-
-        </div>
-    </div>
-
-    <div class="container">
-
-        <div class="row gx-3">
-
-        <div class="col-6"> 1</div>
-        <div class="col-6"> 2</div>
-        <div class="col-6"> 3 </div>
-        <div class="col-6"> 4 </div>
-
-
-
-
-        </div> 
-    </div>
-<div class="container">
-    <h1> buttons </h1>
-   
- <button type="button" class="btn btn-primary"> Primary </button>
- <button type="button" class="btn btn-secondary">Secondary</button>
- <button type="button" class="btn btn-success"> Success </button>
- <button type="button" class="btn btn-danger"> Danger</button>
- <button type="button" class="btn btn-warning"> Warning </button>
- <button type="button" class="btn btn-info"> Info </button>
- <button type="button" class="btn btn-light"> Light </button>
- <button type="button" class="btn btn-dark"> Dark </button>
- <button type="button" class="btn btn-link"> Link </button>
- <button type="button" class="btn btn-outline-primary"> Link</button>
- <button type="button" class="btn btn-primary-lrg"> Link </button>
-</div>
-
-<h1> Cards </h1>
-<div class="card" style="width: 18rem">
-    Lorem ipsum
-</div>
-<div class="row">
-    <div class="col-sm-6">
-        <div class="card">
-            <div class="card-body">
-                lorem ipsum dolor sit
-            </div>
-        </div>
-    </div>
-</div> -->
-
 <div class="container">  
-    <img src="imgs/hosting.jpg" class="fit-image ">
+    
 </div>
 
 </div> 
 <ul class="nav nav-pills nav-justified" style="background-color: darkred">
     <li class="nav-item" >
-      <a class="nav-link active" href="#!" style="background-color: black">Link</a>
+      <a class="nav-link active" href="index.php?n=home" style="background-color: black">Home</a>
     </li>
     <li class="nav-item">
-      <a class="nav-link active" href="#!" style="background-color: black">Link</a>
+      <a class="nav-link active" href="index.php?n=register" style="background-color: black">Post an open table </a>
     </li>
     <li class="nav-item">
-      <a class="nav-link active" href="#!" style="background-color: black">Link</a>
+      <a class="nav-link active" href="index.php?n=now" style="background-color: black">Get a table now </a>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link active" href="index.php?n=reserve" style="background-color: black">Make reservations for a table</a>
     </li>
   </ul>
   
@@ -179,31 +126,19 @@ height: 200px; /* only if you want fixed height */
     <button type="button" class="btn btn-primary" style="background-color: black; width: 100px"> link</button></div>
 <div class="float-right"> link</div>
 <div class="card"> <div class="card-body"> 
-<form class="form-signin">
-
-<h1 class="h3 mb-3 font-weight-normal"> Please Sign In</hi1>
-<label for="inputEmail" class="sr-only"> Email Address</label>
-<input type="email" id="inputEmail" class="form-control" placeholder="Email address" required autofocus>
-<label for="inputPassword" class="sr-only">Password</label>
-<input type="password" id="inputPassword" class="form-control" placeholder="Password" required>
-<div class="checkbox mb-3"></div>
-<label>
-    <input type="checkbox" value="remember-me">
-    "Remember me "
-</label>
-</div> 
-<button class="btn btn-lg btn-primary btn-block" type="submit">Sign in</button>
-<p class="mt-5 mb-3 text-muted"> 2017-2018</p>
-
-</form>
+<?php
+        
+        if ($_GET['n'] == 'register') {
+            include("register.php");
+        } 
+       
+?>
 
 
 
-    
 
 
 
-</div> 
 
   </div> </div> 
 
